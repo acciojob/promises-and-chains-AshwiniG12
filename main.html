@@ -7,12 +7,32 @@
 
   <body>
     <!-- write the body here -->
-	      <form>
-		<input type="text" id="name"> <br> <br>
-		<input type=number id="age">
-		<button type="submit" id="btn"> submit </button>
-	</form>
+    <form>
+    age <input type="number" id="age"><br><br>
+    name <input type="text" id="name"><br><br>
+    <button onclick="click()" id="btn" type="submit">submit</button>
+  </form>
+    <!-- <script type="text/javascript" src="./script.js"></script> -->
+    <script>
+      let age=document.getElementById('age').value
+      let name=document.getElementById('name').value
+      function click(){
+        let promise1 = new Promise((resolve, reject) => {
+          if(age>18){
+    setTimeout(() => {
+      //console.log("hi")
+    resolve("Welcome, "+name+". You can vote.");
+    //alert("Welcome, "+name+". You can vote.")
+  }, 4000);
+}
+  else{
+   // console.log("hello");
+    reject("Oh "+name+". You aren't old enough.");
+    //alert("Oh "+name+". You aren't old enough.")
+  }
+  });
+}
+    </script>
 
-    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
